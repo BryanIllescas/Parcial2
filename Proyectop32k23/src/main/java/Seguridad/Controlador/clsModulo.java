@@ -89,4 +89,8 @@ public class clsModulo {
         daoModulo daomodulo = new daoModulo();
         return daomodulo.actualizaModulo(modulo);
     }              
+
+    public void insertarModulo(clsModulo modulo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
