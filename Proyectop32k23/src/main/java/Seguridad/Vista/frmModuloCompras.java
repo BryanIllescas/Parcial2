@@ -7,6 +7,7 @@ package Seguridad.Vista;
 
 
 //import Seguridad.Controlador.clsModulo;
+import Seguridad.Controlador.clsCompras;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import java.io.File;
@@ -36,16 +37,16 @@ public class frmModuloCompras extends javax.swing.JInternalFrame {
         modelo.addColumn("Estatus Modulo");
        
 
-        clsModulo modulos = new clsModulo();
+        clsCompras modulos = new clsCompras();
         VendedorDAO vendedorDAO = new VendedorDAO();
-        List<clsModulo> listamodulos = modulos.getListadoModulo();
+        List<clsCompras> listamodulos = modulos.getListadoCompras();
      
         tablaModulos.setModel(modelo);
         String[] dato = new String[10];
         for (int i = 0; i < listamodulos.size(); i++) {
-            dato[0] = Integer.toString(listamodulos.get(i).getIdModulo());
-            dato[1] = listamodulos.get(i).getNombreModulo();
-            dato[2] = listamodulos.get(i).getEstatusModulo();
+            dato[0] = Integer.toString(listamodulos.get(i).getIdCompras());
+            dato[1] = listamodulos.get(i).getNombreCompras();
+            dato[2] = listamodulos.get(i).getEstatusCompras();
             modelo.addRow(dato);
         }       
     }
@@ -275,7 +276,7 @@ public class frmModuloCompras extends javax.swing.JInternalFrame {
                             .addComponent(btnModificar)
                             .addComponent(btnEliminar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnLimpiar)
                             .addComponent(jButton2)))
                     .addGroup(layout.createSequentialGroup()
@@ -310,7 +311,7 @@ public class frmModuloCompras extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        clsModulo modulo = new clsModulo();
+        clsCompras modulo = new clsModulo();
         modulo.setNombreModulo(txtNombre.getText());
         //modulos.setIdModulos(txtContrasena.getText());
 
